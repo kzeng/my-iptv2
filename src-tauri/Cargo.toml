@@ -1,0 +1,26 @@
+[package]
+name = "my-iptv"
+version = "1.0.0"
+description = "My IPTV rebuilt with Tauri"
+authors = ["My IPTV"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "my_iptv_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+reqwest = { version = "0.12", features = ["blocking", "rustls-tls"], default-features = false }
+rfd = "0.15"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+tauri = { version = "2", features = [] }
+tiny_http = "0.12"
+url = "2"
